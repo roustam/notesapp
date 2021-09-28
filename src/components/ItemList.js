@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
 function ItemList(props) {
   console.log('props --->', props)
   const { ItemList } = props
@@ -15,5 +15,9 @@ function ItemList(props) {
   )
 }
 
-export default ItemList
+const mapStateToProps = state => {
+  console.log('state -->', state)
+  return state
+}
 
+export default connect(mapStateToProps, null)(ItemList)
