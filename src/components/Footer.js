@@ -7,7 +7,7 @@ export default class FooterPage extends React.Component {
   }
 
   render() {
-    return <footer>PageFooter</footer>
+    return <footer className={'mt-3 border bg-light'}>PageFooter</footer>
   }
 }
 

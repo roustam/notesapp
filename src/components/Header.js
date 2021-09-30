@@ -7,16 +7,15 @@ class HeaderPage extends React.Component {
     super(props)
     this.state={
       title:'',
-      text:''
+      text:'',
+      id:''
     }
   }
-
 
   inputTopicHandler = event => {
     this.setState({title: event.target.value})
   }
   
-
   inputMessageHandler = event => {
     this.setState({text: event.target.value})
   }
@@ -36,10 +35,10 @@ class HeaderPage extends React.Component {
   render() {
     return (
     <>
-      <header>Введите тему и текст сообщения</header>
+      <header>Введите тему и текст заметки</header>
       <form onSubmit={this.onSubmitNote}>
-        <div className="row">
-          <div className='col'>
+        <div className={'row'}>
+          <div className='col mb-3'>
           <input 
             type="text" 
             className="form-control" 
@@ -56,8 +55,10 @@ class HeaderPage extends React.Component {
             value={this.state.text}
             onChange={this.inputMessageHandler}
             />
+            
           </div>
-          <button className={"button btn bnt-success"} type='submit'>Submit</button>
+          
+          <button className={'button btn-success pt3'} type='submit'>Submit</button>
           <hr className={'mt-3 mb-3'}/>
         </div>
       </form>

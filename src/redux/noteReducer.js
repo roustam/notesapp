@@ -1,15 +1,15 @@
 import { CREATE_NOTE } from "./types"
 
 const initialState = {
-  text:'test text',
-  title:'title text'
+  notes:[],
+  fetchedNotes:[]
 }
 
 export const noteReducer = (state=initialState, action) => {
   switch (action.type) {
     case CREATE_NOTE:
       console.log('state notes noteReducer-->', state)
-      return{...state }
+      return {...state, notes: [...state.notes, action.payload] }
     default: return state
   }
 }
