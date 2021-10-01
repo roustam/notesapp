@@ -1,1 +1,2 @@
 export const CREATE_NOTE = 'NOTES/CREATE_NOTE'
+export const SELECT_NOTE = 'NOTES/SELECT_NOTE'

@@ -29,7 +29,7 @@ class HeaderPage extends React.Component {
     }
     this.props.createNote(newNote)
     this.setState({title:'', text:''})
-    console.log('vals =>', newNote)
+    console.log('newNote vals =>', newNote)
   }
 
   render() {
@@ -42,6 +42,7 @@ class HeaderPage extends React.Component {
           <input 
             type="text" 
             className="form-control" 
+            placeholder='Введите тему заметки'
             id="title" 
             value={this.state.title}
             onChange={this.inputTopicHandler}
@@ -50,6 +51,7 @@ class HeaderPage extends React.Component {
           <div className='col'>
             <input 
             type="text" 
+            placeholder='Введите текст заметки'
             className="form-control" 
             id="message" 
             value={this.state.text}

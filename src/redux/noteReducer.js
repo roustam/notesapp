@@ -1,8 +1,7 @@
 import { CREATE_NOTE } from "./types"
 
 const initialState = {
-  notes:[],
-  fetchedNotes:[]
+  notes:[]
 }
 
 export const noteReducer = (state=initialState, action) => {
