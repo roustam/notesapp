@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 
 const NoteContent = ({currentNote, allNotes}) => {
   const currentNoteText = allNotes.find(note => note.id === currentNote)
-  console.log('---------->' , currentNoteText);
-  //console.log('my notes -->' ,currentNoteText['text'])
+//  console.log('-all notes->' , currentNote, currentNoteText);
   return (
     <div>
       <p> {Date(currentNote)}  </p>  

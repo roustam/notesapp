@@ -7,7 +7,7 @@ const initialState = {
 export const selectedNoteReducer = (state=initialState, action) => {
   switch(action.type) {
       case SELECT_NOTE: 
-      console.log('select note reducer ', action.payload)
+      console.log('select note reducer payload', action.payload)
       return {...state, selectedNote: action.payload}
     default: return state
   }

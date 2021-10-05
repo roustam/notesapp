@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {connect} from 'react-redux'
-import { createNote } from "../redux/actions";
+import { createNote } from "../redux/actions"
+
 
 class HeaderPage extends React.Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class HeaderPage extends React.Component {
   
   inputMessageHandler = event => {
     this.setState({text: event.target.value})
+  }
+
+  someOtherMeth = el => {
+    console.log('state and props=>', this.state, this.props)
   }
 
   onSubmitNote = event => {
@@ -59,12 +64,12 @@ class HeaderPage extends React.Component {
             />
             
           </div>
-          
+
           <button className={'button btn-success pt3'} type='submit'>Submit</button>
           <hr className={'mt-3 mb-3'}/>
         </div>
       </form>
-        
+
     </>
     )
   }
