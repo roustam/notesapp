@@ -10,7 +10,7 @@ const ItemList = ({allNotes}) => {
     console.log('--selectNoteHandler--> ', el.id);
   }
   const deleteNoteHandler = (el) => {
-    //console.log('--deleteNoteHandler-->', el)
+    console.log('--deleteNoteHandler-->', el)
     dispatch(deleteNote(el))
   }
 
@@ -18,7 +18,7 @@ const ItemList = ({allNotes}) => {
     return <div>нет записей</div>
   } else {
     //console.log('all notes --->', allNotes, typeof(allNotes) )
-    return allNotes.map((note) => <div className={"border mb-3 p-3 bg-light"} key={note.id}>
+    return allNotes.map((note) => <div className={"border mb-3 p-3 bg-light"} id={(Math.floor(Math.random()*100000+1)).toString()}>
       <p onClick={() => selectNoteHandler(note)} >{note.title}</p>
       <u onClick={() => deleteNoteHandler(note)}> Удалить </u>
     </div>)

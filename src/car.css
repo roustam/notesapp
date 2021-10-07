@@ -1,0 +1,24 @@
+.car-container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    background: slategray;
+    height: 80vh;
+    border: 1px solid slategray;
+    border-radius: 8px;
+    padding: 0 5rem 0 5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #fff;
+    border-radius: 0;
+    padding: 1rem;
+    margin-left: -100px;
+}
+
+.slide-1 {
+    position: relative;
+    height: fit-content;
+}

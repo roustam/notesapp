@@ -1,0 +1,9 @@
+import React from "react";
+
+const Carousel = () => {
+  return (
+    <h3> carousel </h3>
+ )
+}
+
+export default Carousel

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {connect} from 'react-redux'
-import { createNote } from "../redux/actions"
-
+import { createNote, fetchNote, fetchAlbums } from "../redux/actions"
 
 class HeaderPage extends React.Component {
   constructor(props) {
@@ -20,9 +19,9 @@ class HeaderPage extends React.Component {
   inputMessageHandler = event => {
     this.setState({text: event.target.value})
   }
-
-  someOtherMeth = el => {
-    console.log('state and props=>', this.state, this.props)
+  handleFetchClick = event => {
+    event.preventDefault()
+    this.props.fetchNote()
   }
 
   onSubmitNote = event => {
@@ -36,6 +35,7 @@ class HeaderPage extends React.Component {
     this.setState({title:'', text:''})
     console.log('newNote vals =>', newNote)
   }
+
 
   render() {
     return (
@@ -64,20 +64,24 @@ class HeaderPage extends React.Component {
             />
             
           </div>
-
+          <div>
           <button className={'button btn-success pt3'} type='submit'>Submit</button>
-          <hr className={'mt-3 mb-3'}/>
+          <button className={'button btn-warning pt3'} onClick={e => this.handleFetchClick(e)}>Fetch</button>
+
+          </div>
+            <hr className={'mt-3 mb-3'}/>
         </div>
       </form>
-
+      <button className={'button btn-info pt3'} onClick={this.props.fetchAlbums} >Saga call</button>
     </>
     )
   }
 }
 
 const mapDispatchToProps = {
-  createNote
+  createNote,
+  fetchNote,
+  fetchAlbums,
 }
 
 export default connect(null, mapDispatchToProps)(HeaderPage)
-
